@@ -57,9 +57,10 @@ Eine Datei pro Sprache. Innerhalb der CSS-Datei klare Kommentar-Trenner wie:
 
 ### Farben (CSS-Variablen in `:root`)
 ```css
---black: #0c0d0f;
---anthracite: #16181b;
---anthracite-light: #1f2226;
+--black: #0f1214;            /* seit 11/2026 an RAL 7016 angelehnt */
+--anthracite: #181d20;
+--anthracite-light: #22292d;
+--ral7016: #383e42;
 --steel-1: #c9cdd3;
 --steel-2: #8b919b;
 --steel-3: #5b6168;
@@ -87,7 +88,7 @@ Der Nutzer wollte explizit den **Look von apple.com/at** als Vorbild — ABER mi
 - Ruhige, zurückhaltende Typografie, keine Effekthascherei
 - Akzentfarbe (Türkis) **sehr sparsam** einsetzen, nicht überall
 - Wenig visuelle Unruhe, keine überladenen Elemente
-- Hero-Bereich zentriert, **kein Hero-Bild**, kein Scroll-Cue/Scroll-Indikator (wurde bewusst entfernt)
+- Hero-Bereich zentriert, kein Scroll-Cue. Statt Foto ein dezentes Doppelstab-Gittermatten-Raster (`.mesh-bg`), bis echte Projektfotos vorliegen
 
 ### Bewusst vermiedene Stilmittel
 - Kein Glasmorphism/Verlaufs-Buttons wie im allerersten Premium-Template (zu "Startup-mäßig" für einen Metallbaubetrieb)
@@ -105,7 +106,10 @@ Der Nutzer wollte explizit den **Look von apple.com/at** als Vorbild — ABER mi
 ## 5. Bilder
 
 Liegen in `images/`:
-- `logo.jpg` — Firmenlogo (schwarz mit Metall-Schliff-Effekt im "N")
+- `logo-neuburger-metalltechnik.png` — neues Logo (11/2026, Metall-Optik), aus dem Original im Ordner `../Logo` freigestellt; überall eingebunden
+- `favicon.ico`, `favicon-192.png`, `apple-touch-icon.png` — N-Symbol aus dem neuen Logo; `og-neuburger-metalltechnik.jpg` — Vorschaubild
+- `logo.jpg` / `Logo_transparent.png` — altes Logo „Montage · Service · Reparatur“, nicht mehr verwendet
+- `zaun_1.jpg` – `zaun_3.jpg` — Herkunft unklar, vermutlich Stockfotos, keine Gittermatten → bewusst NICHT als Referenz verwendet
 - `team-marvin.jpg` — Portrait Marvin Neuburger
 - `team-hans-peter.jpg` — Portrait Hans-Peter Neuburger
 
@@ -113,14 +117,17 @@ Bei neuen Bildern: sprechende Dateinamen verwenden, IMMER in `images/` ablegen, 
 
 ---
 
-## 6. Offene/bekannte To-Dos (Stand letzter Chat-Session)
+## 6. Offene/bekannte To-Dos (Stand 20.11.2026)
 
-- **Impressum** (`impressum.html`): Enthält Platzhalter in `[eckigen Klammern]` für Adresse, genaue Gewerbebezeichnung, Gewerbebehörde, UID — müssen noch mit echten Daten ausgefüllt werden.
-- **Datenschutz** (`datenschutz.html`): Adresse-Platzhalter ausfüllen, ist aktuell ein allgemeiner Mustertext.
-- **Kontaktformular**: Zeigt aktuell nur eine Frontend-Bestätigung an, sendet noch KEINE echte E-Mail. Für echten Versand z. B. Formspree oder EmailJS anbinden (Hinweis dazu als Kommentar in `script.js` vorhanden).
-- Inhaltlich bereits von der alten Seite (neuburger-metall.at) übernommen: Leistungstexte, Werte (Präzise Ausführung, Faire Preise, Persönlicher Kontakt, Familienbetrieb).
-
----
+- **Überarbeitung 11/2026 umgesetzt:** neue Seite `metalltechnik.html`, Navigation Home | Metalltechnik | Leistungen | Über uns | Projekte | Kontakt, mobiles Menü neu, 6 Leistungsbereiche, News/Projekte/Einstellungen in `content/*.json` (Pflege siehe README.md).
+- **Impressum:** Platzhalter in eckigen Klammern (Adresse Firmensitz, Gewerbe, Behörde, UID) mit echten Daten füllen. Die Privatadresse (Krieglach) NUR im Impressum, nirgends sonst.
+- **Kontaktformular:** kein echter Versand-Dienst angebunden; derzeit Fallback über vorbereitete E-Mail (mailto). Empfehlung: Web3Forms/Formspree mit office@neuburger-metall.at, dann `formularEndpunkt` setzen und Datenschutz ergänzen.
+- **Google-Bewertungslink** und **WhatsApp-Nummer** fehlen → in `content/einstellungen.json` eintragen; Bereiche bleiben bis dahin ausgeblendet.
+- **Projektbilder:** echte Fotos (v. a. Gittermattenzäune, Tore) vom Kunden nachliefern lassen → `content/projekte.json`. Vorher-Nachher erst ab 2027.
+- **Hörmann:** Montagepartnerschaft nur textlich erwähnt (laut Kundenangabe), kein Logo.
+- **Conmag:** nicht öffentlich nennen, solange keine Freigabe vorliegt.
+- **Google Fonts** werden extern geladen → datenschutzfreundlicher wäre Selbsthosting.
+- **Datenschutz:** allgemeiner Mustertext, rechtlich prüfen lassen.
 
 ## 7. Workflow-Vereinbarung (GitHub & Vercel)
 

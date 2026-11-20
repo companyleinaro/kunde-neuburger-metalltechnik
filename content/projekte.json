@@ -1,0 +1,17 @@
+{
+  "hinweis": "Weitere Einblicke in unsere Projekte folgen.",
+  "projekte": [
+    {
+      "id": "balkonanlage-erhoehung",
+      "aktiv": true,
+      "aufStartseite": true,
+      "titel": "Erhöhung einer schmiedeeisernen Balkonanlage",
+      "kategorie": "Metalltechnik & Anpassung",
+      "beschreibung": "Eine bestehende schmiedeeiserne Balkonanlage haben wir erhöht und angepasst.",
+      "ort": "",
+      "bilder": [],
+      "vorherBild": "",
+      "nachherBild": ""
+    }
+  ]
+}

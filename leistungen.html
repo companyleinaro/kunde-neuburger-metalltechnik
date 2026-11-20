@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Leistungen | Neuburger Metalltechnik</title>
-<meta name="description" content="Montage, Service, Reparatur und Sonderanfertigungen für Tore, Zäune und Überdachungen – von Neuburger Metalltechnik." />
+<title>Leistungen | Gittermattenzäune, Toranlagen, Überdachungen & mehr | Neuburger Metalltechnik</title>
+<meta name="description" content="Gittermattenzäune & Toranlagen, Überdachungen, Metalltechnik & Sonderanfertigungen, Garagentore & Türtechnik sowie Montageservice für Privatkunden und Unternehmen – Neuburger Metalltechnik." />
+<meta name="theme-color" content="#0f1214" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Neuburger Metalltechnik" />
+<meta property="og:title" content="Leistungen | Gittermattenzäune, Toranlagen, Überdachungen & mehr | Neuburger Metalltechnik" />
+<meta property="og:description" content="Gittermattenzäune & Toranlagen, Überdachungen, Metalltechnik & Sonderanfertigungen, Garagentore & Türtechnik sowie Montageservice für Privatkunden und Unternehmen – Neuburger Metalltechnik." />
+<meta property="og:image" content="https://www.neuburger-metall.at/images/og-neuburger-metalltechnik.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +23,29 @@
 </head>
 <body>
 
+<!-- Logo: zentral über images/logo-neuburger-metalltechnik.png austauschbar (neue Datei gleichen Namens einsetzen) -->
 <header class="header" id="header">
   <div class="container nav">
-    <a href="index.html" class="logo-link">
-      <img src="images/logo.jpg" alt="Neuburger Metalltechnik Logo">
+    <a href="index.html" class="logo-link" aria-label="Neuburger Metalltechnik – zur Startseite">
+      <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183">
     </a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
-      <li><a href="leistungen.html" class="active">Leistungen</a></li>
-      <li><a href="projekte.html">Projekte</a></li>
-      <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
-    </ul>
+    <nav class="nav-menu" id="navMenu" aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="metalltechnik.html">Metalltechnik</a></li>
+        <li><a href="leistungen.html" class="active" aria-current="page">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+      </ul>
+      <div class="nav-menu-footer">
+        <a href="kontakt.html" class="btn primary">Jetzt unverbindlich anfragen</a>
+        <a href="tel:+4367761811524" class="nav-phone">+43 677 61811524</a>
+      </div>
+    </nav>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen">
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -36,77 +53,139 @@
 
 <main>
 
-  <section class="page-hero">
+  <section class="page-hero mesh-bg">
     <div class="container">
       <div class="breadcrumb reveal"><a href="index.html">Home</a> / Leistungen</div>
       <span class="eyebrow reveal">Leistungen</span>
-      <h1 class="reveal">Vier Bereiche. Eine Werkstatt. Volle Präzision.</h1>
+      <h1 class="reveal">Gittermattenzäune, Tore und alles rund um Metall.</h1>
+      <p class="reveal" style="font-size:1.15rem; max-width:640px; margin-top:22px; color:var(--steel-1);">Unser Schwerpunkt sind Gittermattenzäune mit passenden Toranlagen. Daneben übernehmen wir Überdachungen, Metalltechnik, Torservice und Montagen – für Privatkunden und Unternehmen.</p>
+      <nav class="service-nav reveal" aria-label="Leistungsbereiche">
+        <a href="#gittermattenzaeune" class="primary-chip">Gittermattenzäune &amp; Toranlagen</a>
+        <a href="#ueberdachungen">Überdachungen</a>
+        <a href="#metalltechnik">Metalltechnik &amp; Sonderanfertigungen</a>
+        <a href="#garagentore">Garagentore &amp; Türtechnik</a>
+        <a href="#montageservice">Montageservice</a>
+        <a href="#unternehmen">Für Unternehmen</a>
+      </nav>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="detail-list">
 
-        <div class="detail-row reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><path d="M3 21V7l9-4 9 4v14M3 21h18M7 21V11h10v10M9 11V7M15 11V7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h3>Montage</h3>
-            <p>Wir übernehmen Montagen aller Art, vom Garagentor bis zur Überdachung. Saubere Arbeit, genaue Ausrichtung und hochwertige Materialien sorgen dafür, dass alles perfekt passt.</p>
-            <ul>
-              <li>Garagentore & Hofeinfahrten</li>
-              <li>Zäune & Einfriedungen</li>
-              <li>Carports & Überdachungen</li>
-            </ul>
-          </div>
+      <!-- Leistung 1: Schwerpunkt -->
+      <article class="service-feature reveal" id="gittermattenzaeune">
+        <div>
+          <span class="feature-label">01 · Unser Spezialgebiet</span>
+          <h2 style="font-size:clamp(1.7rem,3.2vw,2.5rem); margin-bottom:16px;">Gittermattenzäune &amp; Toranlagen</h2>
+          <p>Gittermattenzäune sind unser Kerngeschäft. Sie sind stabil, langlebig und passen zum Einfamilienhaus genauso wie zum Firmengelände.</p>
+          <p>Wir kümmern uns um alles: Wir beraten dich vor Ort, organisieren das passende Material samt Tor und Sichtschutz und montieren den Zaun mit unserem eigenen Team. Auch wenn ein bestehender Zaun erweitert, angepasst oder repariert werden soll, bist du bei uns richtig.</p>
+          <a href="kontakt.html?leistung=zaun" class="btn primary" style="margin-top:8px;">Zaun anfragen <span class="btn-arrow">→</span></a>
         </div>
+        <ul class="check-list">
+          <li>Gittermattenzäune</li>
+          <li>Passende Zaun- und Toranlagen</li>
+          <li>Sichtschutzlösungen</li>
+          <li>Erweiterung bestehender Zäune</li>
+          <li>Anpassung und Reparatur</li>
+          <li>Beratung, Materialorganisation und Montage</li>
+        </ul>
+      </article>
 
-        <div class="detail-row reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h3>Service</h3>
-            <p>Regelmäßige Wartung und schnelle Reparaturen sorgen für Sicherheit und eine lange Lebensdauer deiner Anlagen. Wir prüfen, justieren und beheben Schäden zuverlässig.</p>
-            <ul>
-              <li>Wartung von Toren & Antrieben</li>
-              <li>Funktionsprüfung & Justierung</li>
-              <li>Schnelle Terminvergabe</li>
-            </ul>
-          </div>
-        </div>
+      <div class="service-block-grid">
 
-        <div class="detail-row reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8M3 3v5h5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <!-- Leistung 2 -->
+        <article class="service-block reveal" id="ueberdachungen">
+          <span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 10l10-6 10 6M5 8.5V20M19 8.5V20M3 20h18" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="num">02</span>
+          <h3>Überdachungen</h3>
+          <p>Schutz vor Regen und Sonne für Terrasse, Eingang oder Auto. Wir montieren deine Überdachung sauber ausgerichtet und wetterfest.</p>
+          <ul class="check-list">
+            <li>Terrassenüberdachungen</li>
+            <li>Pergolen</li>
+            <li>Carports</li>
+            <li>Individuelle Überdachungslösungen</li>
+          </ul>
+          <div class="block-footer">
+            <a href="kontakt.html?leistung=ueberdachung" class="text-link">Überdachung anfragen <span aria-hidden="true">→</span></a>
           </div>
-          <div>
-            <h3>Reparatur</h3>
-            <p>Wenn etwas nicht mehr so funktioniert, wie es soll, kümmern wir uns darum. Ob beschädigtes Torblatt oder verschobener Zaun, wir reparieren schnell und zuverlässig.</p>
-            <ul>
-              <li>Torblatt- & Antriebsreparatur</li>
-              <li>Zaun- & Torausrichtung</li>
-              <li>Ersatzteilbeschaffung</li>
-            </ul>
-          </div>
-        </div>
+        </article>
 
-        <div class="detail-row reveal">
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <!-- Leistung 3 -->
+        <article class="service-block reveal" id="metalltechnik">
+          <span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="num">03</span>
+          <h3>Metalltechnik &amp; Sonderanfertigungen</h3>
+          <p>Wenn etwas gebrochen ist, nicht mehr passt oder es eine Lösung von der Stange schlicht nicht gibt: Wir schweißen, reparieren und fertigen nach Maß.</p>
+          <ul class="check-list">
+            <li>Schweißarbeiten</li>
+            <li>Reparaturen</li>
+            <li>Individuelle Metallkonstruktionen</li>
+            <li>Maßanfertigungen</li>
+            <li>Anpassung bestehender Konstruktionen</li>
+            <li>Praktische Lösungen für besondere Anforderungen</li>
+          </ul>
+          <div class="block-footer">
+            <a href="metalltechnik.html" class="text-link">Was ist Metalltechnik? <span aria-hidden="true">→</span></a>
+            <a href="kontakt.html?leistung=metalltechnik" class="text-link">Anfragen <span aria-hidden="true">→</span></a>
           </div>
-          <div>
-            <h3>Sonderanfertigungen</h3>
-            <p>Wir erstellen individuelle Sonderanfertigungen, von der Planung bis zur Umsetzung. Sorgfalt, exakte Ausführung und erstklassige Materialien garantieren ein stimmiges Ergebnis.</p>
-            <ul>
-              <li>Individuelle Metallkonstruktionen</li>
-              <li>Maßgefertigte Lösungen</li>
-              <li>Beratung von der Idee bis zur Umsetzung</li>
-            </ul>
+        </article>
+
+        <!-- Leistung 4 -->
+        <article class="service-block reveal" id="garagentore">
+          <span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M7 21v-9h10v9M7 15h10M7 18h10" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="num">04</span>
+          <h3>Garagentore &amp; Türtechnik</h3>
+          <p>Wir montieren Garagentore und Toranlagen fachgerecht und kümmern uns um Service und Reparatur – vom Antrieb bis zum Beschlag.</p>
+          <p class="partner-note">Als Montagepartner renommierter Unternehmen wie Hörmann stehen wir für fachgerechte Montage, zuverlässigen Service und hochwertige Ausführung.</p>
+          <ul class="check-list">
+            <li>Fachgerechte Montage von Garagentoren und Toranlagen</li>
+            <li>Service und Reparaturen</li>
+            <li>Arbeiten an Torantrieben</li>
+            <li>Türschließer</li>
+            <li>Schlösser und Beschläge</li>
+            <li>Funktionsprüfungen und Anpassungen</li>
+          </ul>
+          <div class="block-footer">
+            <a href="kontakt.html?leistung=garagentor" class="text-link">Garagentor / Türtechnik anfragen <span aria-hidden="true">→</span></a>
           </div>
-        </div>
+        </article>
+
+        <!-- Leistung 5 -->
+        <article class="service-block reveal" id="montageservice">
+          <span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v11H3zM8 9V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 14h18" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="num">05</span>
+          <h3>Montageservice für Privatkunden</h3>
+          <p>Du hast ein Gerätehaus oder einen Bausatz schon gekauft, aber keine Zeit oder kein Werkzeug für den Aufbau? Wir montieren auch Produkte, die du selbst besorgt hast. Auch kleinere Montageaufträge sind willkommen.</p>
+          <ul class="check-list">
+            <li>Gerätehäuser</li>
+            <li>Gartenschuppen</li>
+            <li>Metallkonstruktionen</li>
+            <li>Vorgefertigte Bauteile</li>
+            <li>Individuelle Montagearbeiten</li>
+          </ul>
+          <div class="block-footer">
+            <a href="kontakt.html?leistung=montage" class="text-link">Montage anfragen <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Leistung 6 -->
+        <article class="service-block reveal" id="unternehmen">
+          <span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="num">06</span>
+          <h3>Montageunterstützung für Unternehmen</h3>
+          <p>Euch fehlen für ein Projekt Hände auf der Baustelle? Wir unterstützen Unternehmen tageweise oder projektbezogen mit erfahrenen Monteuren.</p>
+          <ul class="check-list">
+            <li>Tageweise Montageunterstützung</li>
+            <li>Projektbezogene Unterstützung</li>
+            <li>Zusätzliche Montagekapazitäten</li>
+            <li>Mitarbeit bei größeren Montagevorhaben</li>
+            <li>Praktische Unterstützung vor Ort</li>
+          </ul>
+          <div class="block-footer">
+            <a href="kontakt.html?leistung=unternehmen" class="text-link">Unterstützung anfragen <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
 
       </div>
     </div>
@@ -116,36 +195,44 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Ablauf</span>
-        <h2>So läuft dein Projekt mit uns.</h2>
+        <h2>Ein Ansprechpartner. Von Anfang bis Ende.</h2>
+        <p>Du hast es die ganze Zeit mit uns zu tun – ohne Vermittlung über Zwischenstellen.</p>
       </div>
 
       <div class="process-list">
         <div class="process-item reveal">
           <span class="step-num">01</span>
           <div>
-            <h3>Anfrage & Beratung</h3>
-            <p>Du schilderst dein Vorhaben — wir besprechen Möglichkeiten, Materialien und den groben Rahmen.</p>
+            <h3>Anfrage &amp; persönliche Beratung</h3>
+            <p>Du schilderst dein Vorhaben – telefonisch, per E-Mail oder über das Formular. Wir besprechen Möglichkeiten und den groben Rahmen.</p>
           </div>
         </div>
         <div class="process-item reveal">
           <span class="step-num">02</span>
           <div>
-            <h3>Vor-Ort-Termin & Angebot</h3>
-            <p>Wir schauen uns die Situation vor Ort an und erstellen ein faires, transparentes Angebot.</p>
+            <h3>Besichtigung &amp; Planung</h3>
+            <p>Wir sehen uns die Situation vor Ort an, messen auf und planen gemeinsam mit dir die passende Lösung.</p>
           </div>
         </div>
         <div class="process-item reveal">
           <span class="step-num">03</span>
           <div>
-            <h3>Umsetzung</h3>
-            <p>Fertigung und Montage erfolgen sorgfältig, termingerecht und mit hochwertigen Materialien.</p>
+            <h3>Angebot &amp; Materialorganisation</h3>
+            <p>Du bekommst ein nachvollziehbares Angebot. Nach deiner Freigabe organisieren und bestellen wir das Material.</p>
           </div>
         </div>
         <div class="process-item reveal">
           <span class="step-num">04</span>
           <div>
-            <h3>Abnahme & Service</h3>
-            <p>Du prüfst das Ergebnis gemeinsam mit uns — und kannst dich danach auf unseren Service verlassen.</p>
+            <h3>Fachgerechte Montage &amp; Umsetzung</h3>
+            <p>Unser eigenes Team setzt dein Projekt sorgfältig um.</p>
+          </div>
+        </div>
+        <div class="process-item reveal">
+          <span class="step-num">05</span>
+          <div>
+            <h3>Übergabe &amp; Service</h3>
+            <p>Wir gehen das Ergebnis gemeinsam mit dir durch. Und wenn später etwas nachzustellen ist, bleiben wir dein Ansprechpartner.</p>
           </div>
         </div>
       </div>
@@ -154,12 +241,13 @@
 
   <section class="section">
     <div class="container">
-      <div class="detail-row reveal" style="border:1px solid var(--border); border-radius:var(--radius-lg); grid-template-columns:1fr; text-align:center; padding:80px 40px; position:relative; overflow:hidden;">
-        <div style="position:relative; z-index:2;">
-          <span class="eyebrow" style="justify-content:center;">Bereit für dein Projekt?</span>
-          <h2 style="margin-bottom:18px;">Lass uns über dein Vorhaben sprechen.</h2>
-          <p style="max-width:520px; margin:0 auto 32px;">Kontaktiere uns für eine unverbindliche Anfrage oder ein persönliches Angebot.</p>
-          <a href="kontakt.html" class="btn primary">Jetzt anfragen <span class="btn-arrow">→</span></a>
+      <div class="cta-box mesh-bg reveal">
+        <span class="eyebrow">Bereit für dein Projekt?</span>
+        <h2>Lass uns über dein Vorhaben sprechen.</h2>
+        <p>Kontaktiere uns für eine unverbindliche Anfrage – egal ob großer Zaun oder kleine Reparatur.</p>
+        <div class="cta-actions">
+          <a href="kontakt.html" class="btn primary">Jetzt unverbindlich anfragen <span class="btn-arrow">→</span></a>
+          <a href="tel:+4367761811524" class="btn secondary">+43 677 61811524</a>
         </div>
       </div>
     </div>
@@ -171,8 +259,8 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="images/logo.jpg" alt="Neuburger Metalltechnik">
-        <p>Präziser Metallbau aus der Steiermark — von Hand geplant, sauber montiert und persönlich betreut. Für alles, was hält.</p>
+        <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183" loading="lazy">
+        <p>Metalltechnik aus dem Mürztal – spezialisiert auf Gittermattenzäune und Toranlagen. Persönlich beraten, sauber montiert, alles aus einer Hand.</p>
         <div class="footer-social" style="margin-top:18px;">
           <a href="https://www.instagram.com/neuburger_metalltechnik/" aria-label="Instagram" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
@@ -187,8 +275,9 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="metalltechnik.html">Metalltechnik</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="projekte.html">Projekte</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
@@ -197,14 +286,16 @@
       <div class="footer-col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="mailto:office@neuburger-metall.at">office@neuburger-metall.at</a></li>
           <li><a href="tel:+4367761811524">+43 677 61811524</a></li>
+          <li><a href="mailto:office@neuburger-metall.at">office@neuburger-metall.at</a></li>
+          <li data-whatsapp hidden><a href="#">WhatsApp</a></li>
+          <li><a href="kontakt.html#standort">Büro &amp; Schauraum Kindberg<br><span data-setting="schauraum.status">Im Aufbau – Eröffnung Anfang 2027 geplant</span></a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Neuburger Metalltechnik. Alle Rechte vorbehalten.</p>
+      <p>© <span data-year>2026</span> Neuburger Metalltechnik. Alle Rechte vorbehalten.</p>
       <ul class="footer-legal">
         <li><a href="datenschutz.html">Datenschutz</a></li>
         <li><a href="impressum.html">Impressum</a></li>

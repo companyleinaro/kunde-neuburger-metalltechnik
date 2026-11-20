@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kontakt | Neuburger Metalltechnik</title>
-<meta name="description" content="Kontaktiere Neuburger Metalltechnik für eine unverbindliche Anfrage oder ein persönliches Angebot." />
+<title>Kontakt & Anfrage | Neuburger Metalltechnik Kindberg</title>
+<meta name="description" content="Unverbindlich anfragen bei Neuburger Metalltechnik: Telefon +43 677 61811524, office@neuburger-metall.at. Neuer Büro- und Schauraum in der Hauptstraße 77 in Kindberg." />
+<meta name="theme-color" content="#0f1214" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Neuburger Metalltechnik" />
+<meta property="og:title" content="Kontakt & Anfrage | Neuburger Metalltechnik Kindberg" />
+<meta property="og:description" content="Unverbindlich anfragen bei Neuburger Metalltechnik: Telefon +43 677 61811524, office@neuburger-metall.at. Neuer Büro- und Schauraum in der Hauptstraße 77 in Kindberg." />
+<meta property="og:image" content="https://www.neuburger-metall.at/images/og-neuburger-metalltechnik.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +23,29 @@
 </head>
 <body>
 
+<!-- Logo: zentral über images/logo-neuburger-metalltechnik.png austauschbar (neue Datei gleichen Namens einsetzen) -->
 <header class="header" id="header">
   <div class="container nav">
-    <a href="index.html" class="logo-link">
-      <img src="images/logo.jpg" alt="Neuburger Metalltechnik Logo">
+    <a href="index.html" class="logo-link" aria-label="Neuburger Metalltechnik – zur Startseite">
+      <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183">
     </a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
-      <li><a href="leistungen.html">Leistungen</a></li>
-      <li><a href="projekte.html">Projekte</a></li>
-      <li><a href="kontakt.html" class="nav-cta active">Kontakt</a></li>
-    </ul>
+    <nav class="nav-menu" id="navMenu" aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="metalltechnik.html">Metalltechnik</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="kontakt.html" class="nav-cta active" aria-current="page">Kontakt</a></li>
+      </ul>
+      <div class="nav-menu-footer">
+        <a href="kontakt.html" class="btn primary">Jetzt unverbindlich anfragen</a>
+        <a href="tel:+4367761811524" class="nav-phone">+43 677 61811524</a>
+      </div>
+    </nav>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen">
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -36,11 +53,12 @@
 
 <main>
 
-  <section class="page-hero">
+  <section class="page-hero mesh-bg">
     <div class="container">
       <div class="breadcrumb reveal"><a href="index.html">Home</a> / Kontakt</div>
       <span class="eyebrow reveal">Kontakt</span>
       <h1 class="reveal">Bereit für dein Projekt?</h1>
+      <p class="reveal" style="font-size:1.15rem; max-width:600px; margin-top:22px; color:var(--steel-1);">Frag unverbindlich an – per Telefon, E-Mail oder über das Formular. Wir melden uns persönlich bei dir.</p>
     </div>
   </section>
 
@@ -49,11 +67,11 @@
       <div class="contact-layout">
 
         <div class="contact-info-block reveal">
-          <p style="font-size:1.05rem; margin-bottom:10px;">Kontaktiere uns für eine unverbindliche Anfrage oder ein persönliches Angebot. Wir freuen uns auf deine Nachricht!</p>
 
-          <div class="contact-info-item">
-            <span class="label">E-Mail</span>
-            <a href="mailto:office@neuburger-metall.at">office@neuburger-metall.at</a>
+          <div class="contact-quick">
+            <a href="tel:+4367761811524" class="btn primary">Jetzt anrufen</a>
+            <a href="mailto:office@neuburger-metall.at" class="btn secondary">E-Mail schreiben</a>
+            <a href="#" class="btn whatsapp" data-whatsapp hidden>WhatsApp</a>
           </div>
 
           <div class="contact-info-item">
@@ -62,8 +80,32 @@
           </div>
 
           <div class="contact-info-item">
+            <span class="label">E-Mail</span>
+            <a href="mailto:office@neuburger-metall.at">office@neuburger-metall.at</a>
+          </div>
+
+          <div class="contact-info-item">
+            <span class="label">Erreichbarkeit</span>
+            <p>Mo – Fr, 07:00 – 17:00 Uhr</p>
+          </div>
+
+          <div class="location-card" id="standort">
+            <span class="label">Büro- und Schauraum</span>
+            <address>
+              Neuburger Metalltechnik<br>
+              Hauptstraße 77<br>
+              8650 Kindberg, Österreich
+            </address>
+            <span class="status-pill" data-setting="schauraum.status">Im Aufbau – Eröffnung Anfang 2027 geplant</span>
+            <div>
+              <a href="https://www.openstreetmap.org/search?query=Hauptstra%C3%9Fe%2077%2C%208650%20Kindberg" class="text-link" target="_blank" rel="noopener">Auf der Karte ansehen <span aria-hidden="true">→</span></a>
+              <span class="map-note">Öffnet OpenStreetMap in einem neuen Fenster.</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
             <span class="label">Einsatzgebiet</span>
-            <p>Steiermark</p>
+            <p>Kindberg, Mürztal und Bezirk Bruck-Mürzzuschlag – nach Absprache auch darüber hinaus in der Steiermark.</p>
           </div>
 
           <div class="contact-info-item">
@@ -79,27 +121,41 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm">
+        <form class="contact-form reveal" id="contactForm" novalidate>
           <div class="form-row">
             <div class="field">
               <label for="name">Name *</label>
-              <input type="text" id="name" name="name" placeholder="Dein Name" required>
+              <input type="text" id="name" name="name" placeholder="Dein Name" autocomplete="name" required>
             </div>
             <div class="field">
               <label for="phone">Telefonnummer</label>
-              <input type="tel" id="phone" name="phone" placeholder="+43 ...">
+              <input type="tel" id="phone" name="phone" placeholder="+43 ..." autocomplete="tel">
             </div>
           </div>
 
           <div class="form-row">
             <div class="field">
               <label for="email">E-Mail *</label>
-              <input type="email" id="email" name="email" placeholder="deine@email.at" required>
+              <input type="email" id="email" name="email" placeholder="deine@email.at" autocomplete="email" required>
             </div>
             <div class="field">
               <label for="company">Firma</label>
-              <input type="text" id="company" name="company" placeholder="Optional">
+              <input type="text" id="company" name="company" placeholder="Optional" autocomplete="organization">
             </div>
+          </div>
+
+          <div class="field">
+            <label for="service">Gewünschte Leistung</label>
+            <select id="service" name="service">
+              <option value="">Bitte auswählen</option>
+              <option data-key="zaun">Gittermattenzaun / Toranlage</option>
+              <option data-key="ueberdachung">Überdachung</option>
+              <option data-key="metalltechnik">Metalltechnik / Sonderanfertigung</option>
+              <option data-key="garagentor">Garagentor / Türtechnik</option>
+              <option data-key="montage">Montageservice</option>
+              <option data-key="unternehmen">Montageunterstützung für Unternehmen</option>
+              <option data-key="sonstiges">Sonstige Anfrage</option>
+            </select>
           </div>
 
           <div class="field">
@@ -107,13 +163,94 @@
             <textarea id="message" name="message" rows="6" placeholder="Erzähl uns kurz von deinem Projekt ..." required></textarea>
           </div>
 
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Bitte leer lassen</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
           <button type="submit" class="btn primary" style="justify-content:center;">Nachricht senden <span class="btn-arrow">→</span></button>
 
-          <p class="form-note">Mit dem Absenden stimmst du der Verarbeitung deiner Daten gemäß unserer <a href="datenschutz.html" style="color:var(--steel-1); text-decoration:underline;">Datenschutzerklärung</a> zu.</p>
+          <p class="form-note">Mit dem Absenden stimmst du der Verarbeitung deiner Daten gemäß unserer <a href="datenschutz.html" style="color:var(--steel-1); text-decoration:underline;">Datenschutzerklärung</a> zu. Fotos zu deinem Vorhaben kannst du uns gerne per E-Mail schicken.</p>
 
-          <div class="form-success" id="formSuccess">Danke für deine Nachricht! Wir melden uns so schnell wie möglich bei dir.</div>
+          <div class="form-success" id="formSuccess" role="status">Danke für deine Nachricht! Wir melden uns so schnell wie möglich bei dir.</div>
+          <div class="form-error" id="formError" role="alert"></div>
         </form>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Google-Bewertungen (sichtbar, sobald der Link in content/einstellungen.json eingetragen ist) -->
+  <section class="section" style="padding-top:0;" data-google-review hidden>
+    <div class="container">
+      <div class="review-box reveal">
+        <div>
+          <span class="eyebrow">Bewertungen</span>
+          <h2>Deine Erfahrung zählt.</h2>
+          <p>Warst du mit unserer Arbeit zufrieden? Dann freuen wir uns über eine kurze Bewertung auf Google.</p>
+        </div>
+        <a href="#" class="btn primary" data-google-review-link target="_blank" rel="noopener">Jetzt auf Google bewerten <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">FAQ</span>
+        <h2>Häufige Fragen.</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Wie läuft ein Projekt von der Anfrage bis zur Umsetzung ab?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Nach deiner Anfrage klären wir die Details, vereinbaren bei Bedarf einen Termin vor Ort und erstellen ein Angebot. Nach deiner Freigabe organisieren wir das Material und übernehmen die fachgerechte Umsetzung.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Übernehmt ihr auch kleine Aufträge und reine Reparaturen?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja. Ob ein Tor nachgestellt, ein Metallteil geschweißt oder ein Schloss getauscht werden muss – auch kleine Aufträge sind bei uns willkommen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Montiert ihr auch Produkte, die ich selbst gekauft habe?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja, zum Beispiel Gerätehäuser, Gartenschuppen oder vorgefertigte Metallbauteile. Schick uns am besten vorab ein paar Infos oder Fotos zum Produkt.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Was kostet eine Reparatur oder ein neuer Zaun?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Das hängt von Art und Umfang der Arbeit ab. Nach einer kurzen Beschreibung oder Besichtigung bekommst du ein nachvollziehbares Angebot.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            In welchem Gebiet seid ihr tätig?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Vor allem in Kindberg, im Mürztal und im Bezirk Bruck-Mürzzuschlag. Je nach Projekt übernehmen wir auch Arbeiten in anderen Teilen der Steiermark – sprich uns einfach an.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -124,8 +261,8 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="images/logo.jpg" alt="Neuburger Metalltechnik">
-        <p>Präziser Metallbau aus der Steiermark — von Hand geplant, sauber montiert und persönlich betreut. Für alles, was hält.</p>
+        <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183" loading="lazy">
+        <p>Metalltechnik aus dem Mürztal – spezialisiert auf Gittermattenzäune und Toranlagen. Persönlich beraten, sauber montiert, alles aus einer Hand.</p>
         <div class="footer-social" style="margin-top:18px;">
           <a href="https://www.instagram.com/neuburger_metalltechnik/" aria-label="Instagram" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
@@ -140,8 +277,9 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="metalltechnik.html">Metalltechnik</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="projekte.html">Projekte</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
@@ -150,14 +288,16 @@
       <div class="footer-col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="mailto:office@neuburger-metall.at">office@neuburger-metall.at</a></li>
           <li><a href="tel:+4367761811524">+43 677 61811524</a></li>
+          <li><a href="mailto:office@neuburger-metall.at">office@neuburger-metall.at</a></li>
+          <li data-whatsapp hidden><a href="#">WhatsApp</a></li>
+          <li><a href="kontakt.html#standort">Büro &amp; Schauraum Kindberg<br><span data-setting="schauraum.status">Im Aufbau – Eröffnung Anfang 2027 geplant</span></a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Neuburger Metalltechnik. Alle Rechte vorbehalten.</p>
+      <p>© <span data-year>2026</span> Neuburger Metalltechnik. Alle Rechte vorbehalten.</p>
       <ul class="footer-legal">
         <li><a href="datenschutz.html">Datenschutz</a></li>
         <li><a href="impressum.html">Impressum</a></li>

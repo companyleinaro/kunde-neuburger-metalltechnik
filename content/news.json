@@ -1,0 +1,17 @@
+{
+  "meldungen": [
+    {
+      "id": "schauraum-kindberg",
+      "aktiv": true,
+      "datum": "2026-11-20",
+      "anzeigenBis": "",
+      "kategorie": "Wir erweitern uns!",
+      "titel": "Neuer Büro- und Schauraum in Kindberg",
+      "text": "Unser neuer Büro- und Schauraum in der Hauptstraße 77 in Kindberg befindet sich im Aufbau. Die Eröffnung ist für Anfang 2027 geplant.",
+      "bild": "",
+      "bildText": "",
+      "linkText": "Zum Standort",
+      "linkZiel": "kontakt.html#standort"
+    }
+  ]
+}
