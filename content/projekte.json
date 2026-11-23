@@ -1,15 +1,154 @@
 {
   "hinweis": "Weitere Einblicke in unsere Projekte folgen.",
+  "filter": [
+    "Gittermattenzäune & Tore",
+    "Sichtschutz",
+    "Überdachungen",
+    "Garagentore",
+    "Metalltechnik"
+  ],
   "projekte": [
     {
-      "id": "balkonanlage-erhoehung",
+      "id": "holzzaun-zu-gittermattenzaun",
+      "aktiv": true,
+      "hervorheben": true,
+      "aufStartseite": true,
+      "titel": "Vom Holzzaun zum Gittermattenzaun mit Gartentor",
+      "kategorie": "Gittermattenzäune & Tore",
+      "beschreibung": "Wir haben den alten Holzzaun abgebaut, das Material entsorgt und einen neuen Gittermattenzaun mit Gartentor montiert – alles aus einer Hand.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/holzzaun-neu.webp",
+        "images/projekte/holzzaun-abbau.webp",
+        "images/projekte/holzzaun-entsorgung.webp"
+      ],
+      "vorherBild": "images/projekte/holzzaun-vorher.webp",
+      "nachherBild": "images/projekte/holzzaun-nachher.webp",
+      "beschriftungImBild": true
+    },
+    {
+      "id": "einfahrtstor-uebergroesse",
       "aktiv": true,
       "aufStartseite": true,
-      "titel": "Erhöhung einer schmiedeeisernen Balkonanlage",
-      "kategorie": "Metalltechnik & Anpassung",
-      "beschreibung": "Eine bestehende schmiedeeiserne Balkonanlage haben wir erhöht und angepasst.",
+      "titel": "Einfahrtstor in Übergröße",
+      "kategorie": "Gittermattenzäune & Tore",
+      "beschreibung": "Von Hand aus Stahl nach Maß gefertigt – mit stabilem Rahmen und kostengünstiger Gittermattenfüllung.",
       "ort": "",
-      "bilder": [],
+      "bilder": [
+        "images/projekte/einfahrtstor-uebergroesse.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "maschendraht-zu-gittermattenzaun",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Vom Maschendraht zum Gittermattenzaun",
+      "kategorie": "Gittermattenzäune & Tore",
+      "beschreibung": "Der alte Maschendrahtzaun weicht einem stabilen Gittermattenzaun – hier mitten in der Montage.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/maschendraht-montage.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "gruener-zaun-gartentor",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Grüner Gittermattenzaun mit Gartentor",
+      "kategorie": "Gittermattenzäune & Tore",
+      "beschreibung": "Gittermattenzaun mit passendem Gartentor in Grün entlang der Straße.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/gruener-zaun-gartentor.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "zaun-tor-kombination",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Flexibel kombinierbar",
+      "kategorie": "Gittermattenzäune & Tore",
+      "beschreibung": "Unser Gittermattenzaun lässt sich auch mit Toren anderer Hersteller kombinieren.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/zaun-tor-kombination.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "sichtschutz-zweifarbig",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Wenn’s wirklich blickdicht sein soll",
+      "kategorie": "Sichtschutz",
+      "beschreibung": "Zweifarbige Sichtschutzstreifen im Gittermattenzaun sorgen für mehr Privatsphäre.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/sichtschutz-zweifarbig.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "sichtschutz-einfaedeln",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Sichtschutz selbst einfädeln",
+      "kategorie": "Sichtschutz",
+      "beschreibung": "Wir montieren den Zaun, berechnen die benötigte Menge und stellen die Sichtschutzstreifen bereit. Auf Wunsch fädelst du sie selbst ein und sparst so Montagekosten.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/sichtschutz-einfaedeln.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "pultdach-betongarage",
+      "aktiv": true,
+      "aufStartseite": true,
+      "titel": "Pultdach für eine Betongarage",
+      "kategorie": "Überdachungen",
+      "beschreibung": "Laub verstopfte den Innenablauf des Flachdachs, Regenwasser staute sich und drang in die Garage ein. Das neue Pultdach leitet das Wasser über eine Dachrinne an der Rückseite ab.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/pultdach-betongarage.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "sektionaltore-werkstatt",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Sektionaltore für ein Werkstattgebäude",
+      "kategorie": "Garagentore",
+      "beschreibung": "Als Montagepartner von Hörmann haben wir die Sektionaltore eingebaut.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/sektionaltore-werkstatt.webp"
+      ],
+      "vorherBild": "",
+      "nachherBild": ""
+    },
+    {
+      "id": "massarbeit-vor-ort",
+      "aktiv": true,
+      "aufStartseite": false,
+      "titel": "Maßarbeit direkt vor Ort",
+      "kategorie": "Metalltechnik",
+      "beschreibung": "Sonderanfertigungen aus Stahl passen wir direkt auf der Baustelle an.",
+      "ort": "",
+      "bilder": [
+        "images/projekte/massarbeit-vor-ort.webp"
+      ],
       "vorherBild": "",
       "nachherBild": ""
     }

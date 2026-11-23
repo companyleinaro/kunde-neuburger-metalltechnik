@@ -66,10 +66,14 @@
       <div class="section-head reveal">
         <span class="eyebrow">Referenzen</span>
         <h2>Ausgeführte Arbeiten.</h2>
-        <p>Hier zeigen wir Arbeiten, die wir selbst ausgeführt haben. Wir ergänzen die Galerie laufend um neue Projekte und Bilder.</p>
+        <p>Hier zeigen wir Arbeiten, die wir selbst ausgeführt haben – vom neuen Gittermattenzaun bis zur Sonderanfertigung. Klick auf ein Projekt, um alle Bilder zu sehen.</p>
       </div>
 
-      <!-- Inhalte aus content/projekte.json -->
+      <!-- Hervorgehobenes Vorher-Nachher-Projekt (aus content/projekte.json, Feld "hervorheben") -->
+      <div id="projectFeature" hidden></div>
+
+      <!-- Filter und Galerie (aus content/projekte.json) -->
+      <div class="project-filter" id="projectFilter" role="group" aria-label="Projekte filtern" hidden></div>
       <div class="project-grid" data-projects="alle">
         <div class="project-card project-hint">
           <div>
@@ -85,7 +89,7 @@
     <div class="container">
       <div class="cta-box mesh-bg reveal">
         <span class="eyebrow">Bereit für dein Projekt?</span>
-        <h2>Auch dein Vorhaben setzen wir gerne um.</h2>
+        <h2>Dein Projekt als Nächstes?</h2>
         <p>Kontaktiere uns für eine unverbindliche Anfrage oder ein persönliches Angebot.</p>
         <div class="cta-actions">
           <a href="kontakt.html" class="btn primary">Jetzt unverbindlich anfragen <span class="btn-arrow">→</span></a>
@@ -119,7 +123,7 @@
           <li><a href="metalltechnik.html">Metalltechnik</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="ueber-uns.html">Über uns</a></li>
-          <!-- Projekte vorübergehend ausgeblendet: <li><a href="projekte.html">Projekte</a></li> -->
+          <li><a href="projekte.html">Projekte</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>

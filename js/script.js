@@ -225,21 +225,178 @@ document.addEventListener("DOMContentLoaded", () => {
     observeReveal(container);
   };
 
-  /* ---------- 8. Projekte ---------- */
+  /* ---------- 8. Projekte (Galerie, Filter, Großansicht) ---------- */
   const projectIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9M4 9h16M20 20V9M4 14h16M9 9v11M15 9v11M3 20h18M7 9V5h10v4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-  const renderProjects = (data) => {
-    const grids = document.querySelectorAll("[data-projects]");
-    if (!grids.length) return;
+  // Alle Bilder eines Projekts in Anzeigereihenfolge (Vorher, Nachher, weitere)
+  const projectImages = (p) => {
+    const list = [];
+    const before = safeUrl(p.vorherBild);
+    const after = safeUrl(p.nachherBild);
+    if (before && after) {
+      // "beschriftungImBild": Vorher/Nachher steht schon im Foto -> kein zusätzliches Etikett
+      const showLabel = !p.beschriftungImBild;
+      list.push({ src: before, label: "Vorher", show: showLabel });
+      list.push({ src: after, label: "Nachher", show: showLabel });
+    }
+    (Array.isArray(p.bilder) ? p.bilder : []).map(safeUrl).filter(Boolean)
+      .forEach((src) => list.push({ src, label: "" }));
+    return list;
+  };
 
+  /* Großansicht (Lightbox) */
+  let lightbox = null;
+  let lbState = { project: null, images: [], index: 0, lastFocus: null };
+
+  const showImage = (i) => {
+    const imgs = lbState.images;
+    if (!imgs.length) return;
+    lbState.index = (i + imgs.length) % imgs.length;
+    const item = imgs[lbState.index];
+    const img = lightbox.querySelector(".lightbox-img");
+    img.src = item.src;
+    img.alt = `${lbState.project.titel}${item.label ? " – " + item.label.toLowerCase() : ""}`;
+    const label = lightbox.querySelector(".lightbox-label");
+    label.textContent = item.label;
+    label.hidden = !item.label || item.show === false;
+    lightbox.querySelector(".lightbox-count").textContent = imgs.length > 1 ? `Bild ${lbState.index + 1} von ${imgs.length}` : "";
+    lightbox.querySelectorAll(".lightbox-nav").forEach((b) => { b.hidden = imgs.length < 2; });
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox || lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.classList.remove("menu-open");
+    if (lbState.lastFocus && lbState.lastFocus.focus) lbState.lastFocus.focus();
+  };
+
+  const buildLightbox = () => {
+    lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.hidden = true;
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Projektbilder");
+    lightbox.innerHTML = `
+      <div class="lightbox-inner">
+        <button type="button" class="lightbox-close" aria-label="Schließen">×</button>
+        <figure class="lightbox-figure">
+          <div class="lightbox-stage">
+            <img class="lightbox-img" alt="">
+            <span class="lightbox-label" hidden></span>
+            <button type="button" class="lightbox-nav prev" aria-label="Vorheriges Bild">‹</button>
+            <button type="button" class="lightbox-nav next" aria-label="Nächstes Bild">›</button>
+          </div>
+          <figcaption class="lightbox-caption">
+            <span class="project-tag lightbox-tag"></span>
+            <strong class="lightbox-title"></strong>
+            <p class="lightbox-text"></p>
+            <span class="lightbox-count"></span>
+          </figcaption>
+        </figure>
+      </div>`;
+    document.body.appendChild(lightbox);
+
+    lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+    lightbox.querySelector(".prev").addEventListener("click", () => showImage(lbState.index - 1));
+    lightbox.querySelector(".next").addEventListener("click", () => showImage(lbState.index + 1));
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("lightbox-inner")) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox || lightbox.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showImage(lbState.index - 1);
+      if (e.key === "ArrowRight") showImage(lbState.index + 1);
+    });
+
+    // Wischen am Handy
+    let touchX = null;
+    const stage = lightbox.querySelector(".lightbox-stage");
+    stage.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 40) showImage(lbState.index + (dx < 0 ? 1 : -1));
+      touchX = null;
+    });
+  };
+
+  const openLightbox = (p, startIndex = 0) => {
+    const images = projectImages(p);
+    if (!images.length) return;
+    if (!lightbox) buildLightbox();
+    lbState = { project: p, images, index: 0, lastFocus: document.activeElement };
+    lightbox.querySelector(".lightbox-tag").textContent = p.kategorie || "";
+    lightbox.querySelector(".lightbox-title").textContent = p.titel;
+    lightbox.querySelector(".lightbox-text").textContent = p.beschreibung || "";
+    showImage(startIndex);
+    lightbox.hidden = false;
+    document.body.classList.add("menu-open");
+    lightbox.querySelector(".lightbox-close").focus();
+  };
+
+  const projectCard = (p, index) => {
+    const imgs = projectImages(p);
+    const hasBA = imgs.length > 1 && imgs[0].label === "Vorher";
+    const cover = hasBA ? imgs[1] : imgs[0];
+    const media = cover
+      ? `<div class="project-photo">
+           <img src="${escapeHtml(cover.src)}" alt="${escapeHtml(p.titel)}" loading="lazy">
+           ${hasBA ? `<span class="project-badge">Vorher / Nachher</span>` : ""}
+           ${imgs.length > 1 ? `<span class="project-count">${imgs.length} Bilder</span>` : ""}
+         </div>`
+      : `<div class="project-photo no-image"><div class="icon">${projectIcon}</div></div>`;
+    return `
+      <article class="project-card reveal${cover ? " is-clickable" : ""}" data-cat="${escapeHtml(p.kategorie || "")}" data-index="${index}">
+        ${media}
+        <div class="project-info">
+          ${p.kategorie ? `<span class="project-tag">${escapeHtml(p.kategorie)}</span>` : ""}
+          <h3>${cover ? `<button type="button" class="project-open">${escapeHtml(p.titel)}</button>` : escapeHtml(p.titel)}</h3>
+          ${p.beschreibung ? `<p>${escapeHtml(p.beschreibung)}</p>` : ""}
+          ${p.ort ? `<span class="project-location">${escapeHtml(p.ort)}</span>` : ""}
+        </div>
+      </article>`;
+  };
+
+  const renderProjects = (data) => {
     const all = (data && Array.isArray(data.projekte) ? data.projekte : [])
       .filter((p) => p && p.aktiv !== false && p.titel);
     const hint = (data && data.hinweis) || "Weitere Einblicke in unsere Projekte folgen.";
 
-    grids.forEach((grid) => {
+    // Hervorgehobenes Vorher-Nachher-Projekt (nur Projektseite)
+    const featureBox = document.getElementById("projectFeature");
+    const featured = all.find((p) => p.hervorheben && safeUrl(p.vorherBild) && safeUrl(p.nachherBild));
+    if (featureBox && featured) {
+      const n = projectImages(featured).length;
+      featureBox.innerHTML = `
+        <div class="project-feature reveal">
+          <div class="feature-compare">
+            <figure><img src="${escapeHtml(safeUrl(featured.vorherBild))}" alt="${escapeHtml(featured.titel)} – vorher" loading="lazy"><figcaption${featured.beschriftungImBild ? ' class="visually-hidden"' : ""}>Vorher</figcaption></figure>
+            <figure><img src="${escapeHtml(safeUrl(featured.nachherBild))}" alt="${escapeHtml(featured.titel)} – nachher" loading="lazy"><figcaption${featured.beschriftungImBild ? ' class="visually-hidden"' : ""}>Nachher</figcaption></figure>
+          </div>
+          <div class="feature-text">
+            <span class="project-tag">${escapeHtml(featured.kategorie || "")}</span>
+            <h2>${escapeHtml(featured.titel)}</h2>
+            <p>${escapeHtml(featured.beschreibung || "")}</p>
+            <button type="button" class="btn secondary" data-open-featured>Alle ${n} Bilder ansehen <span class="btn-arrow">→</span></button>
+          </div>
+        </div>`;
+      featureBox.hidden = false;
+      featureBox.querySelector("[data-open-featured]").addEventListener("click", () => openLightbox(featured));
+      featureBox.querySelectorAll("figure").forEach((f, i) => {
+        f.addEventListener("click", () => openLightbox(featured, i));
+      });
+      observeReveal(featureBox);
+    }
+
+    document.querySelectorAll("[data-projects]").forEach((grid) => {
       const homeOnly = grid.dataset.projects === "startseite";
       const limit = parseInt(grid.dataset.limit || "0", 10);
-      let items = homeOnly ? all.filter((p) => p.aufStartseite) : all;
+      let items = homeOnly
+        ? all.filter((p) => p.aufStartseite)
+        : all.filter((p) => !(featureBox && featured && p === featured));
       if (limit > 0) items = items.slice(0, limit);
 
       const wrapper = grid.closest("[data-projects-section]");
@@ -248,44 +405,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const cards = items.map((p) => {
-        const images = (Array.isArray(p.bilder) ? p.bilder : []).map(safeUrl).filter(Boolean);
-        const before = safeUrl(p.vorherBild);
-        const after = safeUrl(p.nachherBild);
-        let media;
-
-        if (before && after) {
-          media = `
-            <div class="project-photo before-after">
-              <figure><img src="${escapeHtml(before)}" alt="${escapeHtml(p.titel)} – vorher" loading="lazy"><figcaption>Vorher</figcaption></figure>
-              <figure><img src="${escapeHtml(after)}" alt="${escapeHtml(p.titel)} – nachher" loading="lazy"><figcaption>Nachher</figcaption></figure>
-            </div>`;
-        } else if (images.length) {
-          media = `
-            <div class="project-photo">
-              <img src="${escapeHtml(images[0])}" alt="${escapeHtml(p.titel)}" loading="lazy">
-              ${images.length > 1 ? `<span class="project-count">${images.length} Bilder</span>` : ""}
-            </div>`;
-        } else {
-          media = `<div class="project-photo no-image"><div class="icon">${projectIcon}</div></div>`;
-        }
-
-        return `
-          <article class="project-card reveal">
-            ${media}
-            <div class="project-info">
-              ${p.kategorie ? `<span class="project-tag">${escapeHtml(p.kategorie)}</span>` : ""}
-              <h3>${escapeHtml(p.titel)}</h3>
-              ${p.beschreibung ? `<p>${escapeHtml(p.beschreibung)}</p>` : ""}
-              ${p.ort ? `<span class="project-location">${escapeHtml(p.ort)}</span>` : ""}
-            </div>
-          </article>`;
-      }).join("");
-
-      // Hinweis-Karte nur, solange noch Platz im Raster ist
       const showHint = !homeOnly || !limit || items.length < limit;
       const hintCard = !showHint ? "" : `
-        <div class="project-card project-hint reveal">
+        <div class="project-card project-hint reveal" data-cat="*">
           <div>
             <span class="project-tag">Projekte</span>
             <h3>${escapeHtml(hint)}</h3>
@@ -293,9 +415,42 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>`;
 
-      grid.innerHTML = cards + hintCard;
+      grid.innerHTML = items.map(projectCard).join("") + hintCard;
+
+      grid.querySelectorAll(".project-card.is-clickable").forEach((card) => {
+        const p = items[parseInt(card.dataset.index, 10)];
+        card.addEventListener("click", () => openLightbox(p));
+      });
+
       if (wrapper) wrapper.hidden = false;
       observeReveal(grid);
+
+      // Filter (nur Projektseite)
+      const filterBar = document.getElementById("projectFilter");
+      if (filterBar && !homeOnly) {
+        const used = new Set(items.map((p) => p.kategorie));
+        const cats = (Array.isArray(data.filter) ? data.filter : []).filter((c) => used.has(c));
+        if (cats.length > 1) {
+          filterBar.innerHTML = ["Alle", ...cats].map((c, i) =>
+            `<button type="button" class="filter-chip${i === 0 ? " active" : ""}" data-filter="${i === 0 ? "*" : escapeHtml(c)}" aria-pressed="${i === 0}">${escapeHtml(c)}</button>`
+          ).join("");
+          filterBar.hidden = false;
+          filterBar.addEventListener("click", (e) => {
+            const btn = e.target.closest(".filter-chip");
+            if (!btn) return;
+            const f = btn.dataset.filter;
+            filterBar.querySelectorAll(".filter-chip").forEach((b) => {
+              b.classList.toggle("active", b === btn);
+              b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+            });
+            grid.querySelectorAll(".project-card").forEach((card) => {
+              const c = card.dataset.cat;
+              card.hidden = !(f === "*" || c === f || c === "*");
+              if (!card.hidden) card.classList.add("active");
+            });
+          });
+        }
+      }
     });
   };
 

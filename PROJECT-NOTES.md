@@ -122,7 +122,8 @@ Bei neuen Bildern: sprechende Dateinamen verwenden, IMMER in `images/` ablegen, 
 - **Kontaktformular:** über Web3Forms angebunden (action + `access_key` direkt im `<form>` in kontakt.html). Empfänger ist die beim Access Key hinterlegte E-Mail-Adresse.
 - **Google-Bewertungslink** und **WhatsApp-Nummer** fehlen → in `content/einstellungen.json` eintragen; Bereiche bleiben bis dahin ausgeblendet.
 - **Projekte ausgeblendet (22.11.2026):** Navigationslinks auf allen Seiten und Startseiten-Abschnitt sind auskommentiert, projekte.html hat `noindex`. Zum Einblenden Kommentare entfernen und `noindex` löschen.
-- **Projektbilder:** echte Fotos (v. a. Gittermattenzäune, Tore) vom Kunden nachliefern lassen → `content/projekte.json`. Vorher-Nachher erst ab 2027.
+- **Projektgalerie (23.11.2026):** 10 Projekte aus den Social-Media-Grafiken des Kunden (Originale: `../bilder-webseite/2026-11_Social-Media-Grafiken/`), zugeschnitten ohne Logo/Textbox nach `images/projekte/`. Bewusst NICHT verwendet: Preisgrafik „ab 109 €/lfm“ (Bedingungen unklar), „Präzise unter der Erde“, ÖBB-Bahnübergang und ZIP-Screen-Pergola (wirken KI-bearbeitet bzw. Nennung ÖBB nicht freigegeben), Metallblume, „Welcher Typ bist du?“, schmiedeeisernes Geländer (Bildqualität zu schwach, auf Wunsch entfernt 23.11.2026). ÖAMTC wird nicht genannt („Werkstattgebäude“). Sobald Originalfotos kommen: Bilder in `images/projekte/` ersetzen, `beschriftungImBild` ggf. auf false.
+- **Projektbilder (alt):** echte Fotos (v. a. Gittermattenzäune, Tore) vom Kunden nachliefern lassen → `content/projekte.json`. Vorher-Nachher erst ab 2027.
 - **Hörmann:** Montagepartnerschaft nur textlich erwähnt (laut Kundenangabe), kein Logo.
 - **Conmag:** nicht öffentlich nennen, solange keine Freigabe vorliegt.
 - **Datenschutz:** allgemeiner Mustertext, rechtlich prüfen lassen.

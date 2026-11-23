@@ -39,8 +39,8 @@ Es werden höchstens drei aktuelle Meldungen gezeigt (neueste zuerst). Ist keine
 
 ### Projekte – `content/projekte.json`
 
-Felder: `titel`, `kategorie`, `beschreibung`, `ort` (optional), `bilder` (Liste von Bildpfaden, das erste ist das Titelbild), `vorherBild` / `nachherBild` (optional; nur wenn beide gesetzt sind, wird ein Vorher-Nachher-Vergleich gezeigt), `aufStartseite` (`true` = auch auf der Startseite, max. 3), `aktiv`.
-Bilder vorher verkleinern (ca. 1600 px Breite, unter 300 KB) und in `images/` hochladen.
+Felder je Projekt: `titel`, `kategorie` (muss einem Eintrag in `filter` entsprechen, sonst erscheint kein Filter-Button dafür), `beschreibung`, `ort` (optional), `bilder` (Liste; das erste ist das Titelbild), `vorherBild` / `nachherBild` (optional, nur beide zusammen), `hervorheben` (`true` = großes Vorher-Nachher-Projekt oben auf der Projektseite), `beschriftungImBild` (`true`, wenn „Vorher/Nachher“ bereits im Foto steht), `aufStartseite` (`true` = auf der Startseite, max. 3), `aktiv`.
+Bilder als WebP oder JPG (ca. 1200–1600 px, unter 300 KB) in `images/projekte/` ablegen. Ein Klick auf eine Karte öffnet die Großansicht mit allen Bildern.
 Nur eigene, ausgeführte Arbeiten eintragen.
 
 ### Einstellungen – `content/einstellungen.json`
