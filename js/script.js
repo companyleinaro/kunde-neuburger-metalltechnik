@@ -341,7 +341,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.get("website")) return; // Spam-Schutz (unsichtbares Feld)
       data.delete("website");
 
-      const endpoint = safeUrl(settings.formularEndpunkt);
+      // Versandadresse aus dem action-Attribut des Formulars (Web3Forms), sonst aus content/einstellungen.json
+      const endpoint = safeUrl(form.getAttribute("action") || settings.formularEndpunkt);
       const submitBtn = form.querySelector("button[type=submit]");
 
       if (/^https:\/\//i.test(endpoint)) {

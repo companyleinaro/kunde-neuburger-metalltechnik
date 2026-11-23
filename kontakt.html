@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kontakt & Anfrage | Neuburger Metalltechnik Kindberg</title>
+<title>Kontakt & Anfrage | Neuburger Metalltechnik</title>
 <meta name="description" content="Unverbindlich anfragen bei Neuburger Metalltechnik: Telefon +43 677 61811524, office@neuburger-metall.at. Neuer Büro- und Schauraum in der Hauptstraße 77 in Kindberg." />
 <meta name="theme-color" content="#0f1214" />
 <link rel="icon" href="favicon.ico" sizes="any" />
@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Neuburger Metalltechnik" />
-<meta property="og:title" content="Kontakt & Anfrage | Neuburger Metalltechnik Kindberg" />
+<meta property="og:title" content="Kontakt & Anfrage | Neuburger Metalltechnik" />
 <meta property="og:description" content="Unverbindlich anfragen bei Neuburger Metalltechnik: Telefon +43 677 61811524, office@neuburger-metall.at. Neuer Büro- und Schauraum in der Hauptstraße 77 in Kindberg." />
 <meta property="og:image" content="https://www.neuburger-metall.at/images/og-neuburger-metalltechnik.jpg" />
 
@@ -36,7 +36,7 @@
         <li><a href="metalltechnik.html">Metalltechnik</a></li>
         <li><a href="leistungen.html">Leistungen</a></li>
         <li><a href="ueber-uns.html">Über uns</a></li>
-        <li><a href="projekte.html">Projekte</a></li>
+        <!-- Projekte vorübergehend ausgeblendet: <li><a href="projekte.html">Projekte</a></li> -->
         <li><a href="kontakt.html" class="nav-cta active" aria-current="page">Kontakt</a></li>
       </ul>
       <div class="nav-menu-footer">
@@ -105,7 +105,7 @@
 
           <div class="contact-info-item">
             <span class="label">Einsatzgebiet</span>
-            <p>Kindberg, Mürztal und Bezirk Bruck-Mürzzuschlag – nach Absprache auch darüber hinaus in der Steiermark.</p>
+            <p>Mürztal und Bezirk Bruck-Mürzzuschlag – nach Absprache auch darüber hinaus in der Steiermark.</p>
           </div>
 
           <div class="contact-info-item">
@@ -121,7 +121,12 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm" novalidate>
+        <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Versand über Web3Forms -->
+          <input type="hidden" name="access_key" value="2b02c300-9c8a-4dc4-a0dd-6a0569c72a18">
+          <input type="hidden" name="subject" value="Neue Anfrage über neuburger-metall.at">
+          <input type="hidden" name="from_name" value="Website Neuburger Metalltechnik">
+
           <div class="form-row">
             <div class="field">
               <label for="name">Name *</label>
@@ -248,7 +253,7 @@
             <span class="faq-icon"></span>
           </button>
           <div class="faq-answer">
-            <p>Vor allem in Kindberg, im Mürztal und im Bezirk Bruck-Mürzzuschlag. Je nach Projekt übernehmen wir auch Arbeiten in anderen Teilen der Steiermark – sprich uns einfach an.</p>
+            <p>Vor allem im Mürztal und im Bezirk Bruck-Mürzzuschlag. Je nach Projekt übernehmen wir auch Arbeiten in anderen Teilen der Steiermark – sprich uns einfach an.</p>
           </div>
         </div>
       </div>
@@ -280,7 +285,7 @@
           <li><a href="metalltechnik.html">Metalltechnik</a></li>
           <li><a href="leistungen.html">Leistungen</a></li>
           <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="projekte.html">Projekte</a></li>
+          <!-- Projekte vorübergehend ausgeblendet: <li><a href="projekte.html">Projekte</a></li> -->
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>

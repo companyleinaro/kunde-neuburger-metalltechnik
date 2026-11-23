@@ -60,7 +60,7 @@ Favicon: `favicon.ico`, `images/favicon-192.png`, `images/apple-touch-icon.png` 
 ## Kontaktformular
 
 Ohne eingetragenen Formular-Dienst wird die Anfrage beim Absenden als vorbereitete E-Mail an office@neuburger-metall.at im E-Mail-Programm des Besuchers geöffnet; Nachrichten gehen dadurch nicht verloren.
-Für den direkten Versand ohne E-Mail-Programm kann ein kostenloser Formular-Dienst angebunden werden, z. B. Web3Forms oder Formspree (Registrierung mit office@neuburger-metall.at). Die vom Dienst gelieferte Adresse kommt in `formularEndpunkt`; bei Web3Forms zusätzlich ein verstecktes Feld `access_key` im Formular ergänzen. Danach Datenschutzerklärung um den Dienst ergänzen.
+Aktuell angebunden: Web3Forms (Adresse und `access_key` stehen direkt im Formular in `kontakt.html`, das hat Vorrang vor `formularEndpunkt`). Allgemein: Für den direkten Versand ohne E-Mail-Programm kann ein kostenloser Formular-Dienst angebunden werden, z. B. Web3Forms oder Formspree (Registrierung mit office@neuburger-metall.at). Die vom Dienst gelieferte Adresse kommt in `formularEndpunkt`; bei Web3Forms zusätzlich ein verstecktes Feld `access_key` im Formular ergänzen. Danach Datenschutzerklärung um den Dienst ergänzen.
 
 ## Ausblick: Eingabemaske für News und Projekte
 

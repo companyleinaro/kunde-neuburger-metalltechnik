@@ -120,9 +120,11 @@ Bei neuen Bildern: sprechende Dateinamen verwenden, IMMER in `images/` ablegen, 
 ## 6. Offene/bekannte To-Dos (Stand 20.11.2026)
 
 - **Überarbeitung 11/2026 umgesetzt:** neue Seite `metalltechnik.html`, Navigation Home | Metalltechnik | Leistungen | Über uns | Projekte | Kontakt, mobiles Menü neu, 6 Leistungsbereiche, News/Projekte/Einstellungen in `content/*.json` (Pflege siehe README.md).
-- **Impressum:** Platzhalter in eckigen Klammern (Adresse Firmensitz, Gewerbe, Behörde, UID) mit echten Daten füllen. Die Privatadresse (Krieglach) NUR im Impressum, nirgends sonst.
-- **Kontaktformular:** kein echter Versand-Dienst angebunden; derzeit Fallback über vorbereitete E-Mail (mailto). Empfehlung: Web3Forms/Formspree mit office@neuburger-metall.at, dann `formularEndpunkt` setzen und Datenschutz ergänzen.
+- **Impressum/Datenschutz (22.11.2026):** mit den Daten der alten Seite befüllt. Die Privatadresse (Krieglach) NUR im Impressum, im Datenschutz nur Verweis darauf. Datenschutz bleibt ein Mustertext → rechtlich prüfen lassen.
+- **Kindberg:** nur als Büro-/Schauraum-Standort nennen, NICHT als Einsatzgebiet (Einsatzgebiet = Mürztal / Bezirk Bruck-Mürzzuschlag / Steiermark).
+- **Kontaktformular:** über Web3Forms angebunden (action + `access_key` direkt im `<form>` in kontakt.html). Empfänger ist die beim Access Key hinterlegte E-Mail-Adresse.
 - **Google-Bewertungslink** und **WhatsApp-Nummer** fehlen → in `content/einstellungen.json` eintragen; Bereiche bleiben bis dahin ausgeblendet.
+- **Projekte ausgeblendet (22.11.2026):** Navigationslinks auf allen Seiten und Startseiten-Abschnitt sind auskommentiert, projekte.html hat `noindex`. Zum Einblenden Kommentare entfernen und `noindex` löschen.
 - **Projektbilder:** echte Fotos (v. a. Gittermattenzäune, Tore) vom Kunden nachliefern lassen → `content/projekte.json`. Vorher-Nachher erst ab 2027.
 - **Hörmann:** Montagepartnerschaft nur textlich erwähnt (laut Kundenangabe), kein Logo.
 - **Conmag:** nicht öffentlich nennen, solange keine Freigabe vorliegt.
