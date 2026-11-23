@@ -14,9 +14,8 @@
 <meta property="og:title" content="Datenschutz | Neuburger Metalltechnik" />
 <meta property="og:image" content="https://www.neuburger-metall.at/images/og-neuburger-metalltechnik.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -26,7 +25,7 @@
 <header class="header" id="header">
   <div class="container nav">
     <a href="index.html" class="logo-link" aria-label="Neuburger Metalltechnik – zur Startseite">
-      <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183">
+      <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="680" height="202">
     </a>
 
     <nav class="nav-menu" id="navMenu" aria-label="Hauptnavigation">
@@ -73,7 +72,8 @@
           <h3 style="margin-bottom:8px;">2. Verantwortlicher</h3>
           <p>
             Neuburger Metalltechnik, Inhaber Marvin Neuburger<br>
-            Anschrift: siehe <a href="impressum.html" style="color:var(--off-white); text-decoration:underline;">Impressum</a><br>
+            Friedrich-Schlegel-Gasse 17<br>
+            8670 Krieglach, Österreich<br>
             Telefon: <a href="tel:+4367761811524" style="color:var(--off-white); text-decoration:underline;">+43 677 61811524</a><br>
             E-Mail: <a href="mailto:office@neuburger-metall.at" style="color:var(--off-white); text-decoration:underline;">office@neuburger-metall.at</a>
           </p>
@@ -97,23 +97,26 @@
         </div>
 
         <div>
-          <h3 style="margin-bottom:8px;">5. Schriftarten (Google Fonts)</h3>
+          <h3 style="margin-bottom:8px;">5. Schriftarten</h3>
           <p>
-            Diese Website verwendet Schriftarten von Google Fonts (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf einer Seite lädt dein Browser die Schriftarten von Servern von Google; dabei wird deine IP-Adresse an Google übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (einheitliche, ansprechende Darstellung). Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener" style="color:var(--off-white); text-decoration:underline;">policies.google.com/privacy</a>.
+            Die auf dieser Website verwendeten Schriftarten (Sora und Inter) sind direkt in unsere Website eingebunden und werden gemeinsam mit ihr von unserem Hosting-Anbieter (siehe Punkt 4) geladen. Es besteht dabei keine Verbindung zu Servern von Google oder anderen Drittanbietern; es werden keine Daten an diese übermittelt.
           </p>
         </div>
 
         <div>
-          <h3 style="margin-bottom:8px;">6. Externe Links (Karte, Social Media)</h3>
+          <h3 style="margin-bottom:8px;">6. Google Maps und externe Links</h3>
           <p>
-            Unsere Website enthält Links zu OpenStreetMap, Instagram und Facebook. Dabei handelt es sich um einfache Links, nicht um eingebettete Inhalte: Daten werden erst übertragen, wenn du einen Link anklickst und die jeweilige Seite aufrufst. Ab dann gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
+            Auf unserer Kontaktseite kannst du den Standort unseres Büro- und Schauraums über einen Link in Google Maps öffnen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Karte ist nicht in unsere Website eingebettet: Erst wenn du den Link anklickst, wird Google Maps in einem neuen Fenster aufgerufen und Google verarbeitet dabei insbesondere deine IP-Adresse sowie gegebenenfalls weitere Daten nach den eigenen Datenschutzbestimmungen. Eine Übermittlung in die USA ist dabei möglich; Google ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener" style="color:var(--off-white); text-decoration:underline;">policies.google.com/privacy</a>.
+          </p>
+          <p style="margin-top:12px;">
+            Außerdem enthält unsere Website einfache Links zu Instagram und Facebook (Meta Platforms Ireland Limited) sowie – sofern angeboten – zu WhatsApp und zu unserem Google-Unternehmensprofil. Auch hier werden Daten erst übertragen, wenn du einen Link anklickst und die jeweilige Seite aufrufst. Ab dann gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
           </p>
         </div>
 
         <div>
           <h3 style="margin-bottom:8px;">7. Cookies und lokale Speicherung</h3>
           <p>
-            Wir verwenden keine Tracking- oder Marketing-Cookies. Deine Auswahl im Cookie-Hinweis wird lediglich lokal in deinem Browser (Local Storage) gespeichert, damit der Hinweis nicht bei jedem Seitenaufruf erneut erscheint. Diese Information wird nicht an uns übertragen und kann jederzeit über die Einstellungen deines Browsers gelöscht werden.
+            Wir verwenden keine Tracking- oder Marketing-Cookies. Dass du den Hinweis zur Datennutzung geschlossen hast, wird lediglich lokal in deinem Browser (Local Storage) gespeichert, damit der Hinweis nicht bei jedem Seitenaufruf erneut erscheint. Diese Information wird nicht an uns übertragen und kann jederzeit über die Einstellungen deines Browsers gelöscht werden.
           </p>
         </div>
 
@@ -142,7 +145,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183" loading="lazy">
+        <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="680" height="202" loading="lazy">
         <p>Metalltechnik aus dem Mürztal – spezialisiert auf Gittermattenzäune und Toranlagen. Persönlich beraten, sauber montiert, alles aus einer Hand.</p>
         <div class="footer-social" style="margin-top:18px;">
           <a href="https://www.instagram.com/neuburger_metalltechnik/" aria-label="Instagram" target="_blank" rel="noopener">
@@ -188,10 +191,9 @@
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
-  <p>Wir verwenden nur technisch notwendige Cookies, um dir die beste Nutzung unserer Website zu ermöglichen. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <p>Wir verwenden keine Tracking- oder Marketing-Cookies. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
   <div class="cookie-actions">
-    <button type="button" class="btn primary" id="cookieAccept">Alle akzeptieren</button>
-    <button type="button" class="btn secondary" id="cookieDecline">Nur notwendige</button>
+    <button type="button" class="btn primary" id="cookieAccept">Verstanden</button>
   </div>
 </div>
 

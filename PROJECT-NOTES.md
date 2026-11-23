@@ -75,12 +75,9 @@ Eine Datei pro Sprache. Innerhalb der CSS-Datei klare Kommentar-Trenner wie:
 ```
 
 ### Typografie
-- Überschriften: **Sora** (Google Fonts, wght 500/600/700) — bewusst gewählt: "Charakter, aber elegant-ruhig", NICHT zu kantig/technisch (das war vorher "Archivo" und wurde verworfen)
+- Überschriften: **Sora** (wght 500–700, lokal gehostet) — bewusst gewählt: "Charakter, aber elegant-ruhig", NICHT zu kantig/technisch (das war vorher "Archivo" und wurde verworfen)
 - Fließtext: **Inter** (wght 400/500/600)
-- Google Fonts Link-Snippet (steht in jedem HTML-`<head>`):
-```html
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-```
+- Schriften seit 23.11.2026 **lokal gehostet** (`fonts/*.woff2`, eingebunden über `@font-face` in Abschnitt 0 von `style.css`, Preload im `<head>`). Keine Verbindung zu Google Fonts mehr – nicht wieder auf den Google-Link umstellen.
 
 ### Design-Richtung: "Apple-Prinzip im Dunklen"
 Der Nutzer wollte explizit den **Look von apple.com/at** als Vorbild — ABER mit dunklem Theme (nicht hell wie Apple selbst). Das bedeutet konkret:
@@ -120,7 +117,7 @@ Bei neuen Bildern: sprechende Dateinamen verwenden, IMMER in `images/` ablegen, 
 ## 6. Offene/bekannte To-Dos (Stand 20.11.2026)
 
 - **Überarbeitung 11/2026 umgesetzt:** neue Seite `metalltechnik.html`, Navigation Home | Metalltechnik | Leistungen | Über uns | Projekte | Kontakt, mobiles Menü neu, 6 Leistungsbereiche, News/Projekte/Einstellungen in `content/*.json` (Pflege siehe README.md).
-- **Impressum/Datenschutz (22.11.2026):** mit den Daten der alten Seite befüllt. Die Privatadresse (Krieglach) NUR im Impressum, im Datenschutz nur Verweis darauf. Datenschutz bleibt ein Mustertext → rechtlich prüfen lassen.
+- **Impressum/Datenschutz (22.11.2026):** mit den Daten der alten Seite befüllt. Die Privatadresse (Krieglach) nur im Impressum und – auf Wunsch des Inhabers (23.11.2026) – beim Verantwortlichen in der Datenschutzerklärung; sonst nirgends. Kartenlink Kontaktseite: Google Maps (nur Link, nicht eingebettet). Datenschutz bleibt ein Mustertext → rechtlich prüfen lassen.
 - **Kindberg:** nur als Büro-/Schauraum-Standort nennen, NICHT als Einsatzgebiet (Einsatzgebiet = Mürztal / Bezirk Bruck-Mürzzuschlag / Steiermark).
 - **Kontaktformular:** über Web3Forms angebunden (action + `access_key` direkt im `<form>` in kontakt.html). Empfänger ist die beim Access Key hinterlegte E-Mail-Adresse.
 - **Google-Bewertungslink** und **WhatsApp-Nummer** fehlen → in `content/einstellungen.json` eintragen; Bereiche bleiben bis dahin ausgeblendet.
@@ -128,7 +125,6 @@ Bei neuen Bildern: sprechende Dateinamen verwenden, IMMER in `images/` ablegen, 
 - **Projektbilder:** echte Fotos (v. a. Gittermattenzäune, Tore) vom Kunden nachliefern lassen → `content/projekte.json`. Vorher-Nachher erst ab 2027.
 - **Hörmann:** Montagepartnerschaft nur textlich erwähnt (laut Kundenangabe), kein Logo.
 - **Conmag:** nicht öffentlich nennen, solange keine Freigabe vorliegt.
-- **Google Fonts** werden extern geladen → datenschutzfreundlicher wäre Selbsthosting.
 - **Datenschutz:** allgemeiner Mustertext, rechtlich prüfen lassen.
 
 ## 7. Workflow-Vereinbarung (GitHub & Vercel)

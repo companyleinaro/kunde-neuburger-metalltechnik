@@ -14,9 +14,8 @@
 <meta property="og:title" content="Impressum | Neuburger Metalltechnik" />
 <meta property="og:image" content="https://www.neuburger-metall.at/images/og-neuburger-metalltechnik.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -26,7 +25,7 @@
 <header class="header" id="header">
   <div class="container nav">
     <a href="index.html" class="logo-link" aria-label="Neuburger Metalltechnik – zur Startseite">
-      <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183">
+      <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="680" height="202">
     </a>
 
     <nav class="nav-menu" id="navMenu" aria-label="Hauptnavigation">
@@ -63,10 +62,11 @@
       <div class="reveal" style="display:grid; gap:28px; font-size:1.02rem; color:var(--steel-1);">
 
         <div>
-          <h3 style="margin-bottom:8px;">Angaben gemäß § 5 ECG / § 14 UGB / § 25 MedienG</h3>
+          <h3 style="margin-bottom:8px;">Angaben gemäß § 5 ECG und Offenlegung gemäß § 25 MedienG</h3>
           <p>
+            Medieninhaber und Diensteanbieter:<br>
             Neuburger Metalltechnik<br>
-            Inhaber: Marvin Neuburger<br>
+            Inhaber: Marvin Neuburger (Einzelunternehmen)<br>
             Friedrich-Schlegel-Gasse 17<br>
             8670 Krieglach, Österreich
           </p>
@@ -87,15 +87,9 @@
             Gewerbeberechtigung: Metalltechnik für Metall- und Maschinenbau verbunden mit Metalltechnik für Schmiede und Fahrzeugbau; Metalltechnik für Land- und Baumaschinen (verbundenes Handwerk)<br>
             UID-Nummer: ATU82781857<br>
             Mitglied der Wirtschaftskammer Steiermark<br>
+            Unternehmensgegenstand: Metalltechnik – insbesondere Gittermattenzäune und Toranlagen, Überdachungen, Sonderanfertigungen, Reparaturen und Montagen<br>
             Gewerbebehörde: Bezirkshauptmannschaft Bruck-Mürzzuschlag<br>
             Anwendbare Rechtsvorschriften: Gewerbeordnung (GewO), abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" style="color:var(--off-white); text-decoration:underline;">www.ris.bka.gv.at</a>
-          </p>
-        </div>
-
-        <div>
-          <h3 style="margin-bottom:8px;">Online-Streitbeilegung</h3>
-          <p>
-            Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:var(--off-white); text-decoration:underline;">ec.europa.eu/consumers/odr</a>. Beschwerden kannst du auch direkt an die oben angegebene E-Mail-Adresse richten.
           </p>
         </div>
 
@@ -131,7 +125,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="640" height="183" loading="lazy">
+        <img src="images/logo-neuburger-metalltechnik.png" alt="Neuburger Metalltechnik" width="680" height="202" loading="lazy">
         <p>Metalltechnik aus dem Mürztal – spezialisiert auf Gittermattenzäune und Toranlagen. Persönlich beraten, sauber montiert, alles aus einer Hand.</p>
         <div class="footer-social" style="margin-top:18px;">
           <a href="https://www.instagram.com/neuburger_metalltechnik/" aria-label="Instagram" target="_blank" rel="noopener">
@@ -177,10 +171,9 @@
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
-  <p>Wir verwenden nur technisch notwendige Cookies, um dir die beste Nutzung unserer Website zu ermöglichen. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <p>Wir verwenden keine Tracking- oder Marketing-Cookies. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
   <div class="cookie-actions">
-    <button type="button" class="btn primary" id="cookieAccept">Alle akzeptieren</button>
-    <button type="button" class="btn secondary" id="cookieDecline">Nur notwendige</button>
+    <button type="button" class="btn primary" id="cookieAccept">Verstanden</button>
   </div>
 </div>
 
