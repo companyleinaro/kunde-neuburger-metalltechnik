@@ -66,6 +66,14 @@ Aktuell angebunden: Web3Forms (Adresse und `access_key` stehen direkt im Formula
 
 Für eine Pflege per Eingabemaske statt JSON-Datei eignet sich Decap CMS (kostenlos, speichert direkt in GitHub, liest genau diese `content/`-Dateien). Dafür nötig: eine GitHub-OAuth-App und eine kleine Login-Funktion auf Vercel (Umgebungsvariablen). Ohne diesen Login darf keine Admin-Seite veröffentlicht werden.
 
+## Google & Suchmaschinen (SEO)
+
+- `sitemap.xml`: alle indexierbaren Seiten inkl. Projektbilder. Bei einer neuen Seite oder neuen Projektbildern ergänzen und `lastmod` anpassen. Impressum, Datenschutz und 404 sind bewusst nicht enthalten (`noindex`).
+- `robots.txt`: erlaubt alles und verweist auf die Sitemap. Den Ordner `content/` nicht sperren – Google braucht ihn, um News und Projekte zu sehen.
+- Jede Seite hat `canonical`, `og:url` und eine eigene Beschreibung. Die Startseite enthält Strukturdaten (Schema.org, Betrieb mit Kontakt und Einsatzgebiet).
+- `vercel.json`: Weiterleitungen der alten WordPress-Adressen (z. B. `/kontakt/`), `/index.html` → `/`, `noindex` für `*.vercel.app`-Vorschauadressen, Caching für Bilder und Schriften.
+- `404.html`: eigene Fehlerseite, nutzt absolute Pfade.
+
 ## Lokal testen
 
 VS Code „Live Server“ oder `python -m http.server 5799` im Projektordner. Direktes Öffnen der HTML-Datei (file://) lädt die `content/`-Dateien nicht.

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+
+    { "source": "/kontakt/:rest*", "destination": "/kontakt.html", "permanent": true },
+    { "source": "/leistungen/:rest*", "destination": "/leistungen.html", "permanent": true },
+    { "source": "/ueber-uns/:rest*", "destination": "/ueber-uns.html", "permanent": true },
+    { "source": "/projekte/:rest*", "destination": "/projekte.html", "permanent": true },
+    { "source": "/referenzen/:rest*", "destination": "/projekte.html", "permanent": true },
+    { "source": "/metalltechnik/:rest*", "destination": "/metalltechnik.html", "permanent": true },
+    { "source": "/impressum/:rest*", "destination": "/impressum.html", "permanent": true },
+    { "source": "/datenschutz/:rest*", "destination": "/datenschutz.html", "permanent": true },
+    { "source": "/datenschutzerklaerung/:rest*", "destination": "/datenschutz.html", "permanent": true },
+    { "source": "/datenschutzerklarung/:rest*", "destination": "/datenschutz.html", "permanent": true },
+    { "source": "/home/:rest*", "destination": "/", "permanent": true },
+    { "source": "/startseite/:rest*", "destination": "/", "permanent": true },
+
+    { "source": "/feed/:rest*", "destination": "/", "permanent": true },
+    { "source": "/comments/feed/:rest*", "destination": "/", "permanent": true },
+    { "source": "/wp-sitemap.xml", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
+    {
+      "source": "/content/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
+}
